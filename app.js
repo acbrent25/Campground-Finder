@@ -25,6 +25,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+})
 
 seedDb();
 mongoose.connect("mongodb://localhost/camp_finder", {useMongoClient: true});
@@ -168,6 +172,12 @@ app.post("/login", passport.authenticate("local",
     }), function(req, res){
     
 });
+
+// LOGOUT ROUT
+app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/campgrounds");
+})
 
 
 
