@@ -2,3 +2,25 @@
 .card-block {
 padding: 15px 5px;
 }
+
+#landing-tron {
+    padding: 10rem 2rem;
+    color: #fff;
+}
+
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=2208&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
