@@ -2,17 +2,21 @@ var express             = require("express"),
     app                 = express(),
     bodyParser          = require("body-parser"),
     mongoose            = require("mongoose"),
+    //Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
     methodOverride      = require("method-override"),
     expressSanitizer    = require("express-sanitizer"),
     Campground          = require("./models/campground"),
     passport            = require("passport"),
     LocalStrategy       = require("passport-local"),
     User                = require("./models/user"),
-    seedDb              = require("./seed")
+    seedDb              = require("./seed"),
+    flash               = require("connect-flash")
 
 // REQUIRING ROUTES    
 var campgroundRoutes    = require("./routes/campgrounds"),
     authRoutes          = require("./routes/auth")
+
+
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -28,18 +32,22 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-seedDb();
+// seedDb();
 mongoose.connect("mongodb://localhost/camp_finder", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
+app.use(flash());
 // Static directory // Helps with relative paths
 app.use(express.static("public"));
 // Must go after bodyparser
 app.use(expressSanitizer());
 
+// Send current user to every template
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 
