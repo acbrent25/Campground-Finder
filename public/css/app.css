@@ -10,6 +10,7 @@ padding: 15px 5px;
 
 body, html {
     height: 100%;
+    font-family: 'Hind', serif;
 }
 
 .bg {
@@ -24,3 +25,21 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+h1,h2,h3,h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.5);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: #4cb5f5;
+}
+
+

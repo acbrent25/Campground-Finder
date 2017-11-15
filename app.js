@@ -11,6 +11,7 @@ var express             = require("express"),
     User                = require("./models/user"),
     seedDb              = require("./seed"),
     flash               = require("connect-flash")
+    port = process.env.PORT || 3000;
 
 // REQUIRING ROUTES    
 var campgroundRoutes    = require("./routes/campgrounds"),
@@ -63,6 +64,6 @@ app.get("/", function(req, res){
 });
 
 
-app.listen(3000, function(){
+app.listen(port, function(){
     console.log("Camp Finder server has started");
 });
