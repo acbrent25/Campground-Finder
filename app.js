@@ -41,8 +41,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
-// Static directory // Helps with relative paths
-app.use(express.static("public"));
+
 // Must go after bodyparser
 app.use(expressSanitizer());
 
@@ -62,6 +61,9 @@ app.use("/campgrounds", campgroundRoutes);
 app.get("/", function(req, res){
     res.render("landing");
 });
+
+// Static directory // Helps with relative paths
+app.use(express.static("public"));
 
 
 app.listen(port, function(){

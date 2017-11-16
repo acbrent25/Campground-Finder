@@ -34,7 +34,7 @@
                     <div class="card-block">
                         <h5 class="card-title"><%= campground.name %></h5>
                         <p class="card-text"><small class="text-muted"><% if(campground.description && campground.description.length > 0) { %>
-                        <p><%= campground.description.substring(0, 100)%></p>
+                        <p><%= campground.description.substring(0, 90)%></p>
                     <% } %></small></p>
                         <!-- <p class="card-text"><%= campground.description %></p> -->
                         <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">Check it out</a>
