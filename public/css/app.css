@@ -1,4 +1,7 @@
 
+/* Global
+-------------------------------------------------- */
+
 * {
     border-radius: 0 !important;
   }
@@ -11,57 +14,11 @@ img {
 padding: 15px 5px;
 }
 
-#landing-tron {
-    padding: 5rem 2rem;
-    color: #fff;
-}
-
-#add-new-jumbotron {
-    padding: 0;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
-}
-
 body, html {
     min-height: 100%;
     font-family: 'Hind', serif;
     background-image: url("../img/concrete_seamless.png");
     line-height: 1.1;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-  }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-    margin-top: 40px;
-  }
-
-.bg {
-    /* The image used */
-    background-image: url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=2208&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
-
-    /* Full height */
-    height: 100%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 h1,h2,h3,h4,h5 {
@@ -73,9 +30,11 @@ h5 {
     font-size: 13px;
 }
 
+/* Navbar
+-------------------------------------------------- */
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.5);
-    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
 }
 
 .navbar-brand {
@@ -103,4 +62,49 @@ h5 {
     background: #fff;
 }
 
-/* #b3c100 */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    margin-top: 40px;
+  }
+
+/* Home Page
+-------------------------------------------------- */
+#landing-tron {
+    padding: 5rem 2rem;
+    color: #fff;
+}
+
+.bg {
+    background-image: url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=2208&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Campgrounds
+-------------------------------------------------- */
+#add-new-jumbotron {
+    padding: 0;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+}
+
+
