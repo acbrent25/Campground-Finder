@@ -7,8 +7,8 @@
             <div class="col-md-4">
                 <img src="img/camp-logo.png" id="splash-logo-white" alt="Camp Finder Logo">
             </div>
-            <div class="col-md-8">
-                <h4 class="mt-5">View our hand-picked campgrounds from around the country</h4>
+            <div class="col-md-8 text-center">
+                <h4 id="campground-header">View our hand-picked campgrounds from around the country or add your own</h4>
                 <p>
                     <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
                 </p>
@@ -26,7 +26,7 @@
 
 
     <!-- Main content -->
-    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;" id="campground-container">
         <% campgrounds.forEach(function(campground){ %>
             <div class="col-md-4 col-sm-6">
                 <div class="card mt-4">
