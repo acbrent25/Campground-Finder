@@ -1,42 +1,49 @@
 <% include partials/header %>
 
-<div class="container">
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 >Welcome to Campground Finder</h1>
-            <p>View our hand-picked campgrounds from around the country</p>
-            <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
-            </p>
 
+    <header class="jumbotron jumbotron-fluid" id="add-new-jumbotron">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img/camp-logo.png" id="splash-logo-white" alt="Camp Finder Logo">
+            </div>
+            <div class="col-md-8">
+                <h4 class="mt-5">View our hand-picked campgrounds from around the country</h4>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                </p>
+            </div>
+        </div>
         </div>
     </header>
 
+<div class="container">
     <div class="row">
         <div class="col">
             <h3 class="text-center">Our Most Popular Sites</h3>
         </div>
     </div>
 
+
+    <!-- Main content -->
     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
         <% campgrounds.forEach(function(campground){ %>
             <div class="col-md-4 col-sm-6">
                 <div class="card mt-4">
                     <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
                     <div class="card-block">
-                      <h4 class="card-title"><%= campground.name %></h4>
-                      <p class="card-text"><small class="text-muted"><% if(campground.description && campground.description.length > 0) { %>
+                        <h5 class="card-title"><%= campground.name %></h5>
+                        <p class="card-text"><small class="text-muted"><% if(campground.description && campground.description.length > 0) { %>
                         <p><%= campground.description.substring(0, 100)%></p>
                     <% } %></small></p>
-                      <!-- <p class="card-text"><%= campground.description %></p> -->
-                      <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">Check it out</a>
+                        <!-- <p class="card-text"><%= campground.description %></p> -->
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">Check it out</a>
                     </div>
                 </div>
             </div>
         <%}) %>
-
-    </div><!-- row -->
-
+    </div>
+    
 </div> <!-- container -->
 
 

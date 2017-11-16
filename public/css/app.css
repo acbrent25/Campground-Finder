@@ -1,17 +1,54 @@
 
+* {
+    border-radius: 0 !important;
+  }
+
+img {
+    max-width: 100%;
+}
+
 .card-block {
 padding: 15px 5px;
 }
 
 #landing-tron {
-    padding: 10rem 2rem;
+    padding: 5rem 2rem;
     color: #fff;
 }
 
-body, html {
-    height: 100%;
-    font-family: 'Hind', serif;
+#add-new-jumbotron {
+    padding: 0;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.4);
 }
+
+body, html {
+    min-height: 100%;
+    font-family: 'Hind', serif;
+    background-image: url("../img/concrete_seamless.png");
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    margin-top: 40px;
+  }
 
 .bg {
     /* The image used */
@@ -26,9 +63,13 @@ body, html {
     background-size: cover;
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
+}
+
+h5 {
+    font-size: 13px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -39,7 +80,26 @@ h1,h2,h3,h4 {
 .navbar-brand {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    color: #4cb5f5;
+    
+}
+
+.navbar-light .navbar-brand {
+    color: #00AFD8;
 }
 
 
+.btn-primary {
+    background: #00AFD8;
+    border-color: #00AFD8;
+}
+
+.btn-primary:hover {
+    background: #4cb5f5;
+    border-color: #4cb5f5;
+}
+
+#sidebar {
+    background: #fff;
+}
+
+/* #b3c100 */

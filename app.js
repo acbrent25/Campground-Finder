@@ -21,7 +21,7 @@ var campgroundRoutes    = require("./routes/campgrounds"),
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Rojerman is the best dog",
+    secret: "Rogerman is the best dog",
     resave: false,
     saveUninitialized: false
 }));
