@@ -17,8 +17,6 @@ var express             = require("express"),
 var campgroundRoutes    = require("./routes/campgrounds"),
     authRoutes          = require("./routes/auth")
 
-
-
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
     secret: "Rogerman is the best dog",

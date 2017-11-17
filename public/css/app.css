@@ -127,6 +127,10 @@ margin-top: 40px;
     padding-bottom: 5rem;
 }
 
+#campground-card span {
+    font-weight: bold;
+}
+
 
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap

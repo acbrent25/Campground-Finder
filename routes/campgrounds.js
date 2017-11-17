@@ -23,12 +23,14 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     var name = req.body.name;
     var image = req.body.image;
     var desc = req.body.description;
+    var price = req.body.price;
+    var address = req.body.address;
     var author = {
         id: req.user._id,
         username: req.user.username
     }
     // create object to push new campgrounds into
-    var newCampground = {name: name, image: image, description: desc, author: author};
+    var newCampground = {name: name, image: image, price: price, address: address, description: desc, author: author};
     console.log(req.user);
 
 

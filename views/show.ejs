@@ -6,10 +6,12 @@
         <div class="col-sm-8 m-auto">
             <div class="card">
                 <h4 class="card-header"><%= campground.name%></h4>
-                <div class="card-body">
+                <div class="card-body" id="campground-card">
                     <img class="card-img-top" src="<%=campground.image%>" alt="">
-                    <p class="card-text mt-3">Submitted by: <%= campground.author.username %></p>
-                    <p class="card-text"><%= campground.description %></p>
+                    <p class="card-text mt-3"><span>Submitted by:</span> <%= campground.author.username %></p>
+                    <p class="card-text"><span>Address:</span> <%= campground.address %></p>
+                    <p class="card-text"><span>Cost/Night:</span> $<%= campground.price %></p>
+                    <p class="card-text"><span>About:</span><br><%= campground.description %></p>
 
                     <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
                         <form action="/campgrounds/<%= campground._id%>?_method=DELETE"  method="POST">
