@@ -30,6 +30,10 @@ h5 {
     font-size: 13px;
 }
 
+#error-messaging {
+    margin-top: 20px;
+}
+
 /* Navbar
 -------------------------------------------------- */
 .navbar-light .navbar-nav .nav-link {
@@ -129,6 +133,13 @@ margin-top: 40px;
 
 #campground-card span {
     font-weight: bold;
+}
+
+/* Admin
+-------------------------------------------------- */
+#admin-row {
+    padding: 20px;
+    background: #fff;
 }
 
 

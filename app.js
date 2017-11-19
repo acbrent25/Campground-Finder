@@ -15,7 +15,8 @@ var express             = require("express"),
 
 // REQUIRING ROUTES    
 var campgroundRoutes    = require("./routes/campgrounds"),
-    authRoutes          = require("./routes/auth")
+    authRoutes          = require("./routes/auth"),
+    adminRoutes         = require("./routes/admin")
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -54,6 +55,7 @@ app.use(function(req, res, next){
 // Use Route Files
 app.use(authRoutes);
 app.use("/campgrounds", campgroundRoutes);
+app.use("/admin", adminRoutes);
 
 
 app.get("/", function(req, res){

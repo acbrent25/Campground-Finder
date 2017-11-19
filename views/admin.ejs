@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container">
+    <!-- Main content -->
+    <div class="row" style="display:flex; flex-wrap: wrap;" id="campground-container">
+        <% campgrounds.forEach(function(campground){ %>
+            <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                <div class="col-sm-10 mt-4 mx-auto" id="main-content">
+                    <div class="row" id="admin-row">
+                        <div class="col-sm-4" id="admin-img">
+                            <img class="mr-3" src="<%=campground.image%>" alt="<%= campground.name%>">
+                            <p>
+                                <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                                    <form action="/campgrounds/<%= campground._id%>?_method=DELETE"  method="POST">
+                                        <a class="btn btn-primary" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                <% } %>
+                            </p>
+                        </div><!--/ admin-img -->
+                        
+                    <div class="col-sm-8" id="admin-content">
+                            <h5 class="mt-0 mb-1"><%= campground.name%></h5>
+                            <p class="card-text mt-3"><strong>Submitted by:</strong> <%= campground.author.username %></p>
+                            <p class="card-text"><strong>Address:</strong> <%= campground.address %></p>
+                            <p class="card-text"><strong>Cost/Night:</strong> $<%= campground.price %></p>
+                            <p class="card-text"><strong>About:</strong><br><%= campground.description %></p>
+        
+                            
+                    </div><!--/ admin-content -->
+                    </div><!--/ row -->
+                </div><!--/ main-content -->
+            <% } %>
+        <%}) %>
+    </div>
+</div>
+
+<% include partials/footer %>
