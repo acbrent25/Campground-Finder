@@ -10,13 +10,18 @@ var express             = require("express"),
     LocalStrategy       = require("passport-local"),
     User                = require("./models/user"),
     seedDb              = require("./seed"),
-    flash               = require("connect-flash")
+    flash               = require("connect-flash"),
+    compression         = require('compression'),
+    helmet              = require('helmet'),
     port = process.env.PORT || 3000;
 
 // REQUIRING ROUTES    
 var campgroundRoutes    = require("./routes/campgrounds"),
     authRoutes          = require("./routes/auth"),
     adminRoutes         = require("./routes/admin")
+
+// USE HELMET
+app.use(helmet());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -51,6 +56,8 @@ app.use(function(req, res, next){
     res.locals.success = req.flash("success");
     next();
 });
+
+app.use(compression()); //Compress all routes
 
 // Use Route Files
 app.use(authRoutes);
