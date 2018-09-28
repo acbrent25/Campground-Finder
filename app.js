@@ -39,7 +39,9 @@ passport.deserializeUser(User.deserializeUser());
 
 // seedDb();
 // mongoose.connect("mongodb://localhost/camp_finder", {useMongoClient: true});
-mongoose.connect("mongodb://adam:1234@ds259175.mlab.com:59175/campfinder");
+mongoose.connect("mongodb://adam:1234@ds259175.mlab.com:59175/campfinder", { useMongoClient: true })
+.then(() => require('./db-init')(server))
+.catch(err => console.error(err));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
